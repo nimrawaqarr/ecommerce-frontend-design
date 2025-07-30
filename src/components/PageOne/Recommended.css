@@ -1,0 +1,55 @@
+.recommended-section {
+  /* padding: 1rem; */
+  font-family: Arial, sans-serif;
+  position: relative;
+  width: 100%;
+}
+
+.recommended-title {
+  font-weight: 600;
+  font-size: 24px;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.recommended-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px 16px 8px 24px;
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+  background-color: #fff;
+  text-align: left;
+}
+
+.recommended-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.recommended-price {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.recommended-description {
+  /* font-weight: 400; */
+  font-size: 16px;
+  color: #8B96A5;
+  padding-right: 25px;
+  line-height: 1.6; 
+}

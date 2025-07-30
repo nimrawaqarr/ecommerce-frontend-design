@@ -1,0 +1,22 @@
+.bg-image-consumer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  object-position: center top; 
+  /* transform: translateY(-10%); */
+  z-index: 0;
+}
+
+.banner-overlay-con {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(196, 196, 196, 0.3); 
+  z-index: 1;
+}
+

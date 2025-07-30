@@ -1,0 +1,72 @@
+.discount-banner {
+  background: linear-gradient(45deg, #2a7fff 60%, #005be2 40%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.discount-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 120px;
+  width: 100px;
+  height: 100%;
+  background-color: #005be2;
+  transform: skewX(-20deg);
+}
+
+.discount-text {
+  position: relative;
+  z-index: 2;
+  padding: 35px 30px;
+}
+
+.discount-text h2 {
+  font-size: 22px;
+  /* font-weight: bold; */
+  margin: 0;
+}
+
+.discount-text p {
+  font-size: 16px;
+  margin: 5px 0 0;
+  opacity: 0.5;
+}
+
+.shop-now-btn {
+  background-color: #ff8a1e;
+  border: none;
+  padding: 10px 18px;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: background 0.3s ease;
+  margin-right: 45px
+}
+
+.shop-now-btn:hover {
+  background-color: #e67612;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .discount-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .discount-banner::before {
+    display: none;
+  }
+}
