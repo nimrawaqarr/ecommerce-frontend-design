@@ -1,19 +1,22 @@
 .footer-email-container {
   background-color: hsl(204, 19%, 95%);
   padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
   text-align: center;
   margin: auto;
 }
 
 .footer-email-heading {
-  font-size: 22px;
-  color: #1e1e1e;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1C1C1C;
   margin: auto;
 }
 
 .footer-email-subtext {
   font-size: 16px;
-  color: #707070;
+  color: #606060;
+  font-weight: 400;
   padding: 5px 0px 30px 0px;
   margin: auto;
 }
@@ -36,14 +39,13 @@
   min-width: 280px;
 }
 
-.email-input::placeholder{
-  color: gray;
+.email-input::placeholder {
+  color: #8B96A5;
 }
 
 .email-icon {
-  /* margin-right: 8px; */
   font-size: 18px;
-  color: gray;
+  color: #8B96A5;
   padding: 2px 5px 2px 0px;
 }
 
@@ -56,7 +58,7 @@
 }
 
 .subscribe-button {
-  background-color: #1677ff;
+  background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
   color: white;
   border: none;
   border-radius: 6px;
@@ -67,5 +69,99 @@
 }
 
 .subscribe-button:hover {
-  background-color: #145cd6;
+  background: linear-gradient(180deg, #0067FF 0%, #127FFF 100%);
+}
+
+.subscribe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4BB543;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -10px); }
+  10%, 90% { opacity: 1; transform: translate(-50%, -35px); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+
+
+/* === 1440px (Large desktop) === */
+@media screen and (max-width: 1440px) {
+  .footer-email-container {
+    padding: 36px 20px; /* Slightly reduce padding */
+  }
+}
+
+/* === 1024px (Laptop) === */
+@media screen and (max-width: 1024px) {
+  .footer-email-container {
+    padding: 32px 20px; /* Reduce vertical padding for tighter fit */
+  }
+
+  .footer-email-heading {
+    font-size: 18px; /* Slightly smaller heading */
+  }
+
+  .footer-email-subtext {
+    font-size: 15px;
+  }
+}
+
+/* === 768px (Tablet) === */
+@media screen and (max-width: 768px) {
+  .footer-email-container {
+    padding: 28px 16px;
+  }
+
+  .email-input-container {
+    min-width: 220px; /* Narrower input */
+  }
+
+  .subscribe-button {
+    padding: 10px 16px; /* Smaller button padding */
+    font-size: 15px;
+  }
+}
+
+/* === 375px (Mobile) === */
+@media screen and (max-width: 375px) {
+  .footer-email-container {
+    padding: 24px 12px;
+  }
+
+  .footer-email-heading {
+    font-size: 17px; /* Smaller heading text */
+  }
+
+  .footer-email-subtext {
+    font-size: 14px;
+  }
+
+  .email-input-container {
+    min-width: 300px;
+  }
+
+  .footer-email-form {
+    flex-direction: column; /* Stack input and button vertically */
+    gap: 8px;
+  }
+
+  .subscribe-button {
+    width: 100%; /* Full width button */
+  }
 }

@@ -20,3 +20,15 @@
   z-index: 1;
 }
 
+
+
+
+
+
+@media (max-width: 768px) {
+  .bg-image-consumer{
+    transform: scale(1.05) translateX(-2%);
+    object-position: center left;
+  }
+}
+

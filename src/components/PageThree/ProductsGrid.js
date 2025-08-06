@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductsGrid.css';
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const originalProducts = [
   {
@@ -200,9 +200,9 @@ const removeFilter = (section, value) => {
     
   return (
     <>
-    <div className="suppliers-product-container">
+    <div className="suppliers-product-container-three">
 
-      <aside className="filters">
+      <aside className="filters-three">
       {/* <hr /> */}
       
       <div className="filter-section">
@@ -306,7 +306,7 @@ const removeFilter = (section, value) => {
                   />
                 </div>
 
-              <div className="min-max-inputs">
+              <div className="min-max-inputs-three">
                 <div>
                   <label>Min</label>
                   <input type="text" value={minVal} onChange={handleMinChange} />
@@ -420,20 +420,20 @@ const removeFilter = (section, value) => {
 
 
       <main className="products">
-          <div className="top-row">
+          <div className="top-row-three">
             <h2>12,911 items in <strong>Mobile accessory</strong></h2>
 
-             <div className="right-controls">
+             <div className="right-controls-three">
             <div className="custom-checkbox-wrapper" onClick={() => setChecked(!checked)}>
                 <div className={`custom-checkbox ${checked ? "checked" : ""}`}>
                   {/* {checked && <span className="tick">✔</span>} */}
                   {checked && <i className="fas fa-check tick"></i>}
                 </div>
-                <span className="label">Verified only</span>
+                <span className="label-three">Verified only</span>
             </div>
 
-            <div className="select-wrapper">
-                <select className="feature-select">
+            <div className="select-wrapper-three">
+                <select className="feature-select-three">
                   <option>Featured</option>
                   <option>Price: Low to High</option>
                   <option>Price: High to Low</option>
@@ -493,7 +493,7 @@ const removeFilter = (section, value) => {
               <div key={index} className="product-item">
                 {/* Image */}
                 <div className="image-container">
-                  <img src={product.image} alt={product.title} className="product-image" />
+                  <Link to="/page-four"><img src={product.image} alt={product.title} className="product-image" /></Link>
                 </div>
 
                 {/* Gray Line */}
@@ -531,13 +531,13 @@ const removeFilter = (section, value) => {
                     </div>
 
                     {/* Title */}
-                    <h4 className="product-title">{product.title}</h4>
+                    <Link to="/page-four" className="product-title">{product.title}</Link>
                   </div>
 
                   {/* Right side: heart icon */}
                   <div className="product-right">
                     <i
-                      className={`${favorites[index] ? 'fas' : 'far'} fa-heart fav-icon`}
+                      className={`${favorites[index] ? 'fas' : 'far'} fa-heart fav-icon-three`}
                       onClick={() => toggleFavorite(index)}
                     ></i>
                   </div>

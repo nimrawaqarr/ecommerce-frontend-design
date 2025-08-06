@@ -1,8 +1,8 @@
 .recommended-section {
   /* padding: 1rem; */
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .recommended-title {
@@ -10,6 +10,7 @@
   font-size: 24px;
   max-width: 1200px;
   margin: auto;
+  color: #1C1C1C;
   padding-bottom: 20px;
   padding-top: 20px;
 }
@@ -30,6 +31,11 @@
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   background-color: #fff;
   text-align: left;
+    transition: box-shadow 0.3s ease;
+}
+
+.recommended-card:hover{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .recommended-img {
@@ -40,16 +46,79 @@
 }
 
 .recommended-price {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 16px;
   margin-bottom: 4px;
-  color: #222;
+  color: #1C1C1C;
 }
 
 .recommended-description {
-  /* font-weight: 400; */
+  font-weight: 400;
   font-size: 16px;
   color: #8B96A5;
-  padding-right: 25px;
+  padding-right: 20px;
   line-height: 1.6; 
+}
+
+
+
+
+/* 🔽 MEDIA QUERIES FOR RESPONSIVENESS */
+
+@media (max-width: 1024px) {
+  .recommended-section{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .recommended-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .recommended-img {
+    height: 160px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .recommended-section{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .recommended-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .recommended-title {
+    font-size: 20px;
+  }
+
+  .recommended-img {
+    height: 140px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .recommended-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .recommended-card {
+    padding: 12px;
+  }
+
+  .recommended-img {
+    height: 120px;
+  }
+
+  .recommended-description,
+  .recommended-price {
+    font-size: 14px;
+  }
 }

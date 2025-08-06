@@ -1,17 +1,25 @@
 .section-navbar {
   margin: auto;
   display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
   align-items: center;
   max-width: 1200px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #8B96A5; /* light gray-blue text */
+  padding: 20px 16px;
+  color: #8B96A5;
   font-size: 16px;
+  font-weight: 400;
   gap: 2px;
+  font-family: 'Inter', sans-serif;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #8B96A5;
 }
 
 .breadcrumb {
   cursor: pointer;
+  white-space: nowrap; /* Prevent breaking breadcrumb text */
 }
 
 .breadcrumb:hover {
@@ -19,14 +27,63 @@
 }
 
 .breadcrumb:first-child {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .separator {
-  margin: 0px 12px;
-  /* padding-bottom: px; */
+  margin: 0 12px;
   padding-top: 3px;
   color: #8B96A5;
   font-size: 10px;
 }
 
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .section-navbar {
+    font-size: 14px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px 8px;
+    margin-left: 90px;
+    row-gap: 6px;
+  }
+} 
+
+
+@media (max-width: 768px) {
+  .section-navbar {
+    font-size: 14px;
+    padding: 16px 0px;
+    gap: 1px;
+    margin-left: 70px;
+  }
+
+  .separator {
+    margin: 0 8px;
+    font-size: 9px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .section-navbar {
+    font-size: 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 12px 0px;
+    margin-left: 25px;
+    /* row-gap: 6px; */
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+  }
+
+  .separator {
+    margin: 0 6px;
+    font-size: 8px;
+  }
+}

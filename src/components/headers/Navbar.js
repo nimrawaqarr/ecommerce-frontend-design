@@ -1,27 +1,29 @@
 import React from 'react';
-import SubNavbar from './SubNavbar';
 import './Navbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = () => {
-
-   const navigate = useNavigate();
-    const handleClick = () => {
-      navigate('/page-five');
-    };
-
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/page-five');
+  };
 
   return (
     <nav className="navbar">
-
+      {/* Left: Logo */}
       <div className="navbar-left">
-        <img src="/images/pageone/logo.jpg" alt="Logo" className="logo-icon" />
-        {/* <span className="brand-text">Brand</span> */}
+        <Link to="/">
+          <img src="/images/pageone/logo.jpg" alt="Logo" className="logo-icon" />
+        </Link>
       </div>
 
-      {/* Search Bar */}
+      {/* Middle: Search */}
       <div className="search-bar-group">
-        <input type="text" placeholder="Search" className="search-input" />
+        <div className="search-input-wrapper">
+          <i className="fas fa-search search-icon"></i>
+          <input type="text" placeholder="Search" className="search-input" />
+        </div>
+        
         <select className="category-dropdown">
           <option>All category</option>
           <option>Hot offers</option>
@@ -33,12 +35,12 @@ const Navbar = () => {
         <button className="search-button">Search</button>
       </div>
 
-      {/* Right Menu */}
+      {/* Right: Icons */}
       <div className="navbar-right">
-        <div className="nav-icon">
+        <Link to="/page-four" className="nav-icon">
           <i className="fas fa-user"></i>
           <span>Profile</span>
-        </div>
+        </Link>
         <div className="nav-icon">
           <i className="fas fa-comment-alt"></i>
           <span>Message</span>
@@ -52,9 +54,7 @@ const Navbar = () => {
           <span>My cart</span>
         </div>
       </div>
-
     </nav>
-
   );
 };
 

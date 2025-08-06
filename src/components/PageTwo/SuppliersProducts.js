@@ -99,6 +99,72 @@ const SuppliersProducts = () => {
     navigate('/page-three');
   };
 
+
+
+  //Logic for filters selections/
+    const [selectedFilters, setSelectedFilters] = useState({
+    categories: [],
+    brands: [],
+    features: [],
+    condition: '',
+    ratings: [],
+    manufacturer: [],
+    });
+  
+  
+  // For checkboxes (multiple selections)
+  const handleCheckboxChange = (section, value) => {
+    setSelectedFilters((prev) => {
+      const currentValues = prev[section];
+      return {
+        ...prev,
+        [section]: currentValues.includes(value)
+          ? currentValues.filter((v) => v !== value)
+          : [...currentValues, value],
+      };
+    });
+  };
+  
+  // For radio buttons (single selection like condition)
+  const handleRadioChange = (section, value) => {
+    setSelectedFilters((prev) => ({
+      ...prev,
+      [section]: value,
+    }));
+  };
+  
+  // For clearing all filters
+  const clearAllFilters = () => {
+    setSelectedFilters({
+      categories: [],
+      brands: [],
+      features: [],
+      condition: '',
+      ratings: [],
+      manufacturer: [],
+    });
+  };
+  
+  
+  const removeFilter = (section, value) => {
+    setSelectedFilters((prev) => {
+      if (Array.isArray(prev[section])) {
+        // For arrays like categories, brands, ratings, etc.
+        return {
+          ...prev,
+          [section]: prev[section].filter((v) => v !== value),
+        };
+      } else {
+        // For single-value filters like condition
+        return {
+          ...prev,
+          [section]: '',
+        };
+      }
+    });
+  };
+  
+  
     
 
 
@@ -132,11 +198,22 @@ const SuppliersProducts = () => {
         </div>
         {sections.brands && (
           <ul>
-            <li><input type="checkbox" /> Samsung</li>
-            <li><input type="checkbox" /> Apple</li>
-            <li><input type="checkbox" /> Huawei</li>
-            <li><input type="checkbox" /> Pocco</li>
-            <li><input type="checkbox" /> Lenovo</li>
+            <li><input type="checkbox"
+                checked={selectedFilters.brands.includes("Samsung")}
+                onChange={() => handleCheckboxChange("brands", "Samsung")}/> Samsung </li>
+            <li><input type="checkbox"
+                checked={selectedFilters.brands.includes("Apple")}
+                onChange={() => handleCheckboxChange("brands", "Apple")}/> Apple </li>
+            <li><input type="checkbox"
+                checked={selectedFilters.brands.includes("Huawei")}
+                onChange={() => handleCheckboxChange("brands", "Huawei")}/> Huawei </li>                
+            <li><input type="checkbox"
+                checked={selectedFilters.brands.includes("Pocco")}
+                onChange={() => handleCheckboxChange("brands", "Pocco")}/> Pocco </li>
+            <li><input type="checkbox"
+                checked={selectedFilters.brands.includes("Lenovo")}
+                onChange={() => handleCheckboxChange("brands", "Lenovo")}/> Lenovo </li>
+
             <li className="see-all">See all</li>
           </ul>
         )}
@@ -149,11 +226,22 @@ const SuppliersProducts = () => {
         </div>
         {sections.features && (
           <ul>
-            <li><input type="checkbox" /> Metallic</li>
-            <li><input type="checkbox" /> Plastic Cover</li>
-            <li><input type="checkbox" /> 8GB Ram</li>
-            <li><input type="checkbox" /> Super Power</li>
-            <li><input type="checkbox" /> Large memory</li>
+            <li><input type="checkbox"
+                checked={selectedFilters.features.includes("Metallic")}
+                onChange={() => handleCheckboxChange("features", "Metallic")}/> Metallic </li>
+             <li><input type="checkbox"
+                checked={selectedFilters.features.includes("Plastic Cover")}
+                onChange={() => handleCheckboxChange("features", "Plastic Cover")}/> Plastic Cover </li>
+             <li><input type="checkbox"
+                checked={selectedFilters.features.includes("8GB Ram")}
+                onChange={() => handleCheckboxChange("features", "8GB Ram")}/> 8GB Ram </li>
+              <li><input type="checkbox"
+                checked={selectedFilters.features.includes("Super Power")}
+                onChange={() => handleCheckboxChange("features", "Super Power")}/> Super Power </li>
+              <li><input type="checkbox"
+                checked={selectedFilters.features.includes("Large memory")}
+                onChange={() => handleCheckboxChange("features", "Large memory")}/> Large memory</li>
+
             <li className="see-all">See all</li>
           </ul>
         )}
@@ -212,10 +300,19 @@ const SuppliersProducts = () => {
         </div>
         {sections.condition && (
           <ul>
-            <li><input type="radio" name="condition" defaultChecked /> Any</li>
-            <li><input type="radio" name="condition" /> Refurbished</li>
-            <li><input type="radio" name="condition" /> Brand new</li>
-            <li><input type="radio" name="condition" /> Old items</li>
+
+            <li> <input type="radio" name="condition"
+                checked={selectedFilters.condition === "Any"}
+                onChange={() => handleRadioChange("condition", "Any")} /> Any </li>
+            <li> <input type="radio" name="condition"
+                checked={selectedFilters.condition === "Refurbished"}
+                onChange={() => handleRadioChange("condition", "Refurbished")} /> Refurbished </li>
+            <li> <input type="radio" name="condition"
+                checked={selectedFilters.condition === "Brand new"}
+                onChange={() => handleRadioChange("condition", "Brand new")} /> Brand new </li>
+            <li> <input type="radio" name="condition"
+                checked={selectedFilters.condition === "Old items"}
+                onChange={() => handleRadioChange("condition", "Old items")} /> Old items </li>
           </ul>
         )}
       </div>
@@ -228,38 +325,43 @@ const SuppliersProducts = () => {
           </div>
           {sections.ratings && (
             <ul className="rating-list">
-              <li>
-                <input type="checkbox" />
+
+            <li><input type="checkbox"
+                checked={selectedFilters.ratings.includes("5 star")}
+                onChange={() => handleCheckboxChange("ratings", "5 star")}/> 
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-              </li>
-              <li>
-                <input type="checkbox" />
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="fas fa-star"></i>
-                <i className="far fa-star"></i>
-              </li>
-              <li>
-                <input type="checkbox" />
+                <i className="fas fa-star"></i> </li>
+
+            <li><input type="checkbox"
+                checked={selectedFilters.ratings.includes("4 star")}
+                onChange={() => handleCheckboxChange("ratings", "4 star")}/> 
+               <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
-                <i className="far fa-star"></i>
-                <i className="far fa-star"></i>
-              </li>
-              <li>
-                <input type="checkbox" />
+                <i className="far fa-star"></i> </li>
+
+            <li><input type="checkbox"
+                checked={selectedFilters.ratings.includes("3 star")}
+                onChange={() => handleCheckboxChange("ratings", "3 star")}/> 
+                     <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="fas fa-star"></i>
                 <i className="far fa-star"></i>
+                <i className="far fa-star"></i> </li>
+
+            <li><input type="checkbox"
+                checked={selectedFilters.ratings.includes("2 star")}
+                onChange={() => handleCheckboxChange("ratings", "2 star")}/> 
+                 <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
                 <i className="far fa-star"></i>
                 <i className="far fa-star"></i>
-              </li>
+                <i className="far fa-star"></i> </li>
+
             </ul>
           )}
         </div>
@@ -322,6 +424,37 @@ const SuppliersProducts = () => {
           </div>
 
 
+        {Object.values(selectedFilters).some(val => Array.isArray(val) ? val.length > 0 : val) && (
+        <div className="selected-filters">
+          {Object.entries(selectedFilters).map(([section, values]) =>
+            Array.isArray(values)
+              ? values.map((val, idx) => (
+                  <span key={`${section}-${idx}`} className="filter-chip">
+                    {section === "ratings" ? `${val} Star` : val}
+                    <i
+                      className="fas fa-times chip-close"
+                      onClick={() => removeFilter(section, val)}
+                    ></i>
+                  </span>
+                ))
+              : values && (
+                  <span key={section} className="filter-chip">
+                    {section === "ratings" ? `${values} Star` : values}
+                    <i
+                      className="fas fa-times chip-close"
+                      onClick={() => removeFilter(section, values)}
+                    ></i>
+                  </span>
+                )
+          )}
+          <button className="clear-filters-btn" onClick={clearAllFilters}>
+            Clear all filter
+          </button>
+        </div>
+      )}
+
+
+
 
         <div className="product-list-one">
               {displayedProducts.map((product, index) => (
@@ -355,7 +488,7 @@ const SuppliersProducts = () => {
         </div>
 
         <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <br />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
 

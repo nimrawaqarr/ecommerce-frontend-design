@@ -1,12 +1,13 @@
 import React from 'react';
 import '../headers/Navbar.css'
+import { Link } from 'react-router-dom';
 
 const NavbarFive = () => {
   return (
     <nav className="navbar">
 
       <div className="navbar-left">
-        <img src="/images/pageone/logo.jpg" alt="Logo" className="logo-icon" />
+        <Link to="/"><img src="/images/pageone/logo.jpg" alt="Logo" className="logo-icon" /></Link>
         {/* <span className="brand-text">Brand</span> */}
       </div>
 
@@ -26,10 +27,10 @@ const NavbarFive = () => {
 
       {/* Right Menu */}
       <div className="navbar-right">
-        <div className="nav-icon">
+        <Link to="/page-four" className="nav-icon">
           <i className="fas fa-user"></i>
           <span>Profile</span>
-        </div>
+        </Link>
         <div className="nav-icon">
           <i className="fas fa-comment-alt"></i>
           <span>Message</span>

@@ -1,9 +1,8 @@
 .request-section {
+  font-family: 'Inter', sans-serif;
   position: relative;
-  width: 100%;
-  /* min-height: 100vh; */
+  /* width: 100%; */
   overflow: hidden;
-  /* background-color: #007bff; */
 }
 
 /* Background image styling */
@@ -15,9 +14,8 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   opacity: 0.1;
-  /* transform: scale(1.2) translateX(+5%); */
 }
 
 
@@ -25,12 +23,10 @@
 .overlay {
   position: relative;
   z-index: 1;
-  /* background: linear-gradient(to right, #2C7CF1, #00D1FF80 50%); */
-  background: linear-gradient(to right, rgb(44, 124, 241), rgba(0, 209, 255, 0.5));
-  /* padding: 60px 20px; */
-  border-radius: 8px;
+  /* background: linear-gradient(to right, rgb(44, 124, 241), rgba(0, 209, 255, 0.5)); */
+  background: linear-gradient(94.99deg, #2C7CF1 7.19%, rgba(0, 209, 255, 0.5) 89.49%);
+  border-radius: 6px;
   max-width: 1200px;
-  /* height: 420px; */
   margin: auto;
   color: white;
 }
@@ -50,13 +46,15 @@
 }
 
 .request-left h1 {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 600;
+  color: #FFFFFF;
   margin-bottom: 10px;
 }
 
 .request-left p {
   font-size: 16px;
+  font-weight: 400;
   color: white;
 }
 
@@ -68,7 +66,7 @@
   height: 345px;
   background-color: white;
   padding: 2px 25px 0px 20px;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #333;
   z-index: 2;
   margin: auto;
@@ -80,7 +78,8 @@
 
 .request-right h5{
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #1C1C1C;
     padding: 20px 0px 20px 0px;
     margin: auto;
 }
@@ -112,7 +111,7 @@
   width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 input::placeholder {
@@ -139,7 +138,7 @@ textarea::placeholder {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .request-right textarea {
@@ -150,19 +149,49 @@ textarea::placeholder {
 
 .request-right button {
   width: 128px;
-  background-color: #007bff;
+  background: linear-gradient(180deg, #127FFF 0%, #0067FF 100%);
   color: white;
   padding: 9px 8px;
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.2s ease;
   margin-top: 5px;
 }
 
 .request-right button:hover {
-  background-color: #0056b3;
+  background: linear-gradient(180deg, #0067FF 0%, #127FFF 100%);
+}
+
+
+
+
+
+.subscribe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4BB543;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -10px); }
+  10%, 90% { opacity: 1; transform: translate(-50%, -35px); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
 }
 
 
@@ -170,33 +199,56 @@ textarea::placeholder {
 
 
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .request-content {
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+@media (max-width: 1024px) {
+  .request-section{
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-  .request-left,
-  .request-right {
-    flex: 1 1 100%;
-    max-width: 100%;
+  .request-right{
+    width: 350px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  /* .request-content {
+    flex-direction: column;
+    padding: 20px 16px;
+    gap: 20px;
+  } */
+
+   .request-right{
+    width: 220px;
+  }
+
+  .request-left h1 {
+    font-size: 20px;
+  }
+
+  .request-left p {
+    font-size: 14px;
+    /* width: 240px; */
   }
 
   .overlay {
-    height: auto;
     padding: 20px 10px;
+    border-radius: 0;
   }
 
   .request-right {
     height: auto;
-    padding: 20px;
+    padding: 16px;
   }
 
   .quantity-row {
-    flex-direction: column;
+    /* flex-direction: column; */
+    gap: 12px;
+  }
+
+  .form-group h5{
+    font-size: 18px;
   }
 
   .quantity-input,
@@ -204,6 +256,10 @@ textarea::placeholder {
   .request-right button {
     width: 100%;
   }
+
+  .tooltip {
+    font-size: 13px;
+    padding: 6px 10px;
+    top: -10px;
+  }
 }
-
-

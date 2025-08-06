@@ -1,10 +1,11 @@
 import React from "react";
 import "./SectionNavbar.css";
+import { Link } from "react-router-dom";
 
 const SectionNavbar = () => {
   return (
     <div className="section-navbar">
-      <span className="breadcrumb">Home</span>
+      <Link to="/" className="breadcrumb home-link">Home</Link>
       <i className="fas fa-chevron-right separator"></i>
       <span className="breadcrumb">Clothings</span>
       <i className="fas fa-chevron-right separator"></i>

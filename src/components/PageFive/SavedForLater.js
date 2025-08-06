@@ -28,7 +28,24 @@ const products = [
   },
 ];
 
-export default function SavedForLater() {
+export default function SavedForLater({ setCartItems }) {
+  const handleMoveToCart = (product) => {
+    setCartItems((prev) => [
+      ...prev,
+      {
+        id: Math.random(), // or a better unique ID
+        title: product.title,
+        price: parseFloat(product.price.replace('$', '')),
+        qty: 1,
+        size: 'medium',
+        color: 'black',
+        material: 'Plastic',
+        seller: 'GoPro Seller',
+        image: product.img,
+      },
+    ]);
+  };
+
   return (
     <div className="saved-container">
       <h2 className="saved-title">Saved for later</h2>
@@ -40,7 +57,7 @@ export default function SavedForLater() {
             </div>
             <p className="saved-price">{item.price}</p>
             <p className="saved-desc">{item.title}</p>
-            <button className="saved-btn">
+            <button className="saved-btn" onClick={() => handleMoveToCart(item)}>
               <i className="fas fa-shopping-cart"></i> Move to cart
             </button>
           </div>

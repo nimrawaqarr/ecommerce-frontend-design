@@ -10,8 +10,8 @@ const PageTwo = () => {
 
         <NavbarPage/>
 
-        {/* <SectionNavbar/>
-        <SuppliersProducts/> */}
+        <SectionNavbar/>
+        <SuppliersProducts/>
 
         <FooterPage/>
          

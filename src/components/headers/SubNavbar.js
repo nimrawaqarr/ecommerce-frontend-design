@@ -5,6 +5,27 @@ const SubNavbar = () => {
   const [showHelpDropdown, setShowHelpDropdown] = useState(false);
   const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [showFlagDropdown, setShowFlagDropdown] = useState(false);
+  
+  const [menuOpen, setMenuOpen] = useState(window.innerWidth >= 1024);
+
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          setMenuOpen(true);
+        } else {
+          setMenuOpen(false);
+        }
+      };
+
+      window.addEventListener('resize', handleResize);
+      
+      // Call once on mount in case window size changes before user interacts
+      handleResize();
+
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
   const [selectedLocale, setSelectedLocale] = useState('English, USD');
   const [selectedFlag, setSelectedFlag] = useState('de'); // default: Germany
 
@@ -50,11 +71,14 @@ useEffect(() => {
       {/* Left side menu */}
       <div className="subnavbar-left">
 
-        <div className="menu-icon">
+        {/* <div className="menu-icon">
              <i className="fas fa-bars"></i>
-        </div>
+        </div> */}
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <i className="fas fa-bars"></i>
+      </div>
 
-        <nav className="subnav-links">
+        <nav className={`subnav-links ${menuOpen ? 'active' : ''}`}>
           <a href="#">All category</a>
           <a href="#">Hot offers</a>
           <a href="#">Gift boxes</a>

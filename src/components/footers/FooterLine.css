@@ -5,31 +5,34 @@
   padding: 20px 50px;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: #696868;
+  color: #606060;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .footer-sub-left {
   font-size: 16px;
-  padding: 0px 0px 0px 40px;
+  font-weight: 400;
+  padding-left: 40px;
 }
 
 .footer-sub-right {
   position: relative;
-  display: flex;
-  align-items: center;
   display: inline-flex;
+  align-items: center;
   gap: 8px;
-  padding: 0px 40px 0px 0px;
-  border-radius: 4px;
+  padding-right: 40px;
+  border-radius: 6px;
   cursor: pointer;
   width: fit-content;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .flag-icon {
   object-fit: cover;
-  width: 26px;  
-  height: 16px; 
-  vertical-align: middle; 
+  width: 26px;
+  height: 16px;
+  vertical-align: middle;
 }
 
 .language-text {
@@ -39,20 +42,17 @@
 
 .arrow-icon {
   font-size: 12px;
-  color: rgb(39, 38, 38);
+  color: #1C1C1C;
 }
 
 .footer-dropdown {
   position: absolute;
-  /* top: 100%;
-  left: 0; */
-  bottom: 100%; 
-  right: 0; 
+  bottom: 100%;
+  right: 0;
   margin-bottom: 8px;
   background: white;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  /* margin-top: 6px; */
+  border-radius: 6px;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 150px;
@@ -77,4 +77,74 @@
 
 .dropdown-item .flag-icon {
   margin-right: 6px;
+}
+
+
+
+/* === 1440px (Large desktop) === */
+@media screen and (max-width: 1440px) {
+  .footer-line {
+    padding: 20px 40px; /* Reduce horizontal padding */
+  }
+
+  .footer-sub-left {
+    padding-left: 30px; /* Tighten spacing */
+  }
+
+  .footer-sub-right {
+    padding-right: 30px;
+  }
+}
+
+/* === 1024px (Small laptop) === */
+@media screen and (max-width: 1024px) {
+  .footer-line {
+    padding: 16px 32px; /* More compact on smaller screens */
+  }
+
+  .footer-sub-left {
+    padding-left: 20px;
+  }
+
+  .footer-sub-right {
+    padding-right: 20px;
+  }
+}
+
+/* === 768px (Tablet) === */
+@media screen and (max-width: 768px) {
+  .footer-line {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 45px;
+  }
+
+  .footer-sub-left,
+  .footer-sub-right {
+    padding: 0; /* Remove side paddings */
+  }
+
+  .footer-sub-right {
+    align-self: flex-end; /* Keep dropdown to the right */
+  }
+}
+
+/* === 375px (Mobile) === */
+@media screen and (max-width: 375px) {
+  .footer-line {
+    padding: 12px 16px;
+  }
+
+  .footer-sub-right {
+    gap: 6px; /* Reduce space between flag and text */
+  }
+
+  .language-text {
+    font-size: 13px;
+  }
+
+  .flag-icon {
+    width: 22px;
+    height: 14px;
+  }
 }

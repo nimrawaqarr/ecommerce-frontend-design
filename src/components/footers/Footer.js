@@ -15,39 +15,51 @@ const Footer = () => {
           Best information about the company <br /> goes here but now lorem ipsum is
         </p>
 
-        <div className="social-icons">
+       <div className="social-icons">
+        <a href="https://www.facebook.com/login" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/login" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-instagram"></i>
+        </a>
+        <a href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-youtube"></i>
-        </div>
+        </a>
+      </div>
+
+
       </div>
 
       <div className="footer-links">
         <div>
-          <h4>About</h4>
+          <h5>About</h5>
           <a href="#">About Us</a>
           <a href="#">Find store</a>
           <a href="#">Categories</a>
           <a href="#">Blogs</a>
         </div>
         <div>
-          <h4>Partnership</h4>
+          <h5>Partnership</h5>
           <a href="#">About Us</a>
           <a href="#">Find store</a>
           <a href="#">Categories</a>
           <a href="#">Blogs</a>
         </div>
         <div>
-          <h4>Information</h4>
+          <h5>Information</h5>
           <a href="#">Help Center</a>
           <a href="#">Money Refund</a>
           <a href="#">Shipping</a>
           <a href="#">Contact us</a>
         </div>
         <div>
-          <h4>For users</h4>
+          <h5>For users</h5>
           <a href="#">Login</a>
           <a href="#">Register</a>
           <a href="#">Settings</a>
@@ -55,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="get-app">
-          <h4>Get app</h4>
+          <p className="get-head">Get app</p>
           <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
           <img 
             src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"

@@ -1,14 +1,16 @@
 .discount-banner {
   background: linear-gradient(45deg, #2a7fff 60%, #005be2 40%);
   display: flex;
+  font-family: 'Inter', sans-serif;
   justify-content: space-between;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 6px;
   color: white;
   position: relative;
   overflow: hidden;
   max-width: 1200px;
   margin: auto;
+  margin-bottom: 90px;
 }
 
 .discount-banner::before {
@@ -30,23 +32,27 @@
 
 .discount-text h2 {
   font-size: 22px;
-  /* font-weight: bold; */
+  font-weight: 600;
+  color: #FFFFFF;
   margin: 0;
 }
 
 .discount-text p {
   font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
   margin: 5px 0 0;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .shop-now-btn {
-  background-color: #ff8a1e;
+  background-color: #FF9017;
   border: none;
   padding: 10px 18px;
-  color: white;
-  border-radius: 5px;
+  color: #FFFFFF;
+  border-radius: 6px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -68,5 +74,105 @@
   
   .discount-banner::before {
     display: none;
+  }
+}
+
+
+
+.subscribe-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4BB543;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translate(-50%, -10px); }
+  10%, 90% { opacity: 1; transform: translate(-50%, -35px); }
+  100% { opacity: 0; transform: translate(-50%, -10px); }
+}
+
+
+
+
+
+
+/* Base styles stay the same... */
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .discount-banner{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .discount-text h2 {
+    font-size: 20px;
+  }
+
+  .discount-text p {
+    font-size: 15px;
+  }
+
+  .shop-now-btn {
+    font-size: 15px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .discount-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+
+  .discount-banner::before {
+    display: none;
+  }
+
+  .discount-text {
+    padding: 0;
+  }
+
+  .shop-now-btn {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .discount-text h2 {
+    font-size: 18px;
+  }
+
+  .discount-text p {
+    font-size: 14px;
+  }
+
+  .shop-now-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .tooltip {
+    font-size: 12px;
+    padding: 5px 10px;
   }
 }

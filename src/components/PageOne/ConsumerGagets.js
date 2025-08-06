@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomeCategoryGrid.css";
 import "./ConsumerGagets.css";
+import { useNavigate } from "react-router-dom";
 
 const items = [
   { title: "Smart Watches", from: "From", price: "USD 19", image: "/images/pageone/consumer/smartwatches.png" },
@@ -14,6 +15,12 @@ const items = [
 ];
 
 export default function ConsumerGagets() {
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+      navigate("/page-two"); // Redirect after showing tooltip
+  }
+
   return (
     <div className="home-grid-container">
 
@@ -22,7 +29,7 @@ export default function ConsumerGagets() {
         <img src="/images/pageone/consumer/banner3.png" className="bg-image-consumer" alt="Background" />
         <div className="banner-content">
             <h2> Consumer <br/> electronics and <br/> gadgets</h2>
-            <button>Source now</button>
+            <button onClick={handleClick}>Source now</button>
         </div>
         </div>
 

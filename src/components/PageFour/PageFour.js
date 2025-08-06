@@ -3,6 +3,10 @@ import NavbarPage from '../headers/NavbarPage'
 import SectionNavbar from '../PageTwo/SectionNavbar'
 import Footer from '../footers/Footer'
 import FooterLine from '../footers/FooterLine'
+import DiscountBanner from '../PageFive/DiscountBanner'
+import RelatedProducts from './RelatedProducts'
+import ProductView from './ProductView'
+import Recommendations from './Recommendations'
 
 const PageFour = () => {
   return (
@@ -11,7 +15,10 @@ const PageFour = () => {
         <NavbarPage/>
         <SectionNavbar/>
 
-        
+        <ProductView/>
+        <Recommendations/>
+        <RelatedProducts/>
+        <DiscountBanner/>
 
         <Footer/>
         <FooterLine/>

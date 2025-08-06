@@ -12,6 +12,13 @@ const RequestForm = () => {
     console.log('Request submitted:', { item, details, quantity });
   };
 
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const handleClick = () => {
+    setShowTooltip(true);
+    setTimeout(() => setShowTooltip(false), 2000); // hide after 2 seconds
+  };
+
   return (
     <div className="request-section">
      
@@ -71,8 +78,13 @@ const RequestForm = () => {
                 </div>
                 </div>
 
-
-              <button type="submit">Send inquiry</button>
+              <div className="subscribe-wrapper">
+              <button type="submit" onClick={handleClick}>
+                Send inquiry
+              </button>
+              {showTooltip && <div className="tooltip">Inquiry Sent Successful</div>}
+            </div>
+              {/* <button type="submit">Send inquiry</button> */}
             </form>
           </div>
         </div>

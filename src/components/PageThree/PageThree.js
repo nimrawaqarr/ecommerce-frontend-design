@@ -10,8 +10,8 @@ const PageThree = () => {
 
         <NavbarPage/>
 
-        {/* <SectionNavbar/>
-        <ProductsGrid/> */}
+        <SectionNavbar/>
+        <ProductsGrid/>
 
         <FooterPage/>
 

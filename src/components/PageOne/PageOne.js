@@ -9,16 +9,32 @@ import ExtraServices from './ExtraServices'
 import Suppliers from './Suppliers'
 import NavbarPage from '../headers/NavbarPage'
 import FooterPage from '../footers/FooterPage'
+import { useEffect } from "react";
 
 
 export const PageOne = () => {
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
   return (
     <div>
          
         <NavbarPage/>
 
         <Automobiles/>
-        <DealsOffers/>
+
+        <div id="deals">
+          <DealsOffers />
+        </div>
+
         <HomeCategoryGrid/>
         <ConsumerGagets/>
         <RequestForm/>

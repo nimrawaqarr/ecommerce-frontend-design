@@ -4,8 +4,9 @@
   padding: 40px 50px;
   background-color: white;
   font-family: 'Inter', sans-serif;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  flex-wrap: wrap; /* Allow wrap on smaller screens */
 }
 
 .footer-left {
@@ -18,7 +19,8 @@
 }
 
 .brand-text {
-  color: #747475;
+  font-weight: 400;
+  color: #505050;
   font-size: 16px;
   margin: auto;
   padding: 10px 0px;
@@ -28,11 +30,16 @@
     display: flex;
     gap: 2px;
     margin-top: 8px;
+    text-decoration: none;
+}
+
+.social-icons a{
+    text-decoration: none;
 }
 
 .social-icons i {  
   font-size: 16px;
-  background-color: #abb1b1;
+  background-color: #BDC4CD;
   color: white;
   margin-right: 12px;
   cursor: pointer;
@@ -43,6 +50,7 @@
   display: flex; 
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .footer-links {
@@ -53,39 +61,132 @@
   margin-left: 65px;
 }
 
-.footer-links h4 {
+.footer-links h5 {
   font-size: 16px;
+  color: #1C1C1C;
+  font-weight: 500;
+  font-style: Medium;
   margin: auto;
   padding-bottom: 12px;
-  color: #000;
 }
 
 .footer-links a {
   display: block;
   font-size: 16px;
-  color: #6c757d;
+  color: #8B96A5;
+  font-weight: 400;
   text-decoration: none;
   margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+  color: #3d3f41ff;
+  /* text-decoration: underline;  */
 }
 
 .get-app {
   display: flex;
   flex-direction: column;
   gap: 1px;
-  /* margin: auto; */
-  padding: 0px 5px 50px 0px;
   align-items: flex-start; 
   text-align: left;
+   padding: 0;        
+  margin: 0;
 }
 
-.get-app h4 {
-  margin: 0;               
-  text-align: left;       
+.get-head {
+  margin: 0;
+  padding: 0;         
+  text-align: left;                    
   font-size: 16px;
+  color: #1C1C1C;
+  font-weight: 500;
+  font-style: Medium;
+  padding-bottom: 12px;
+}
+
+.get-app .get-head {
+  text-align: left !important;  /* force override if needed */
 }
 
 .app-button {
   width: 125px;
   height: auto;
   cursor: pointer;
+}
+
+
+
+/* === 1440px (Large desktop) === */
+@media screen and (max-width: 1440px) {
+  .footer {
+    padding: 40px 40px; /* Reduce horizontal padding */
+  }
+
+  .footer-links {
+    margin-left: 50px; /* Slightly reduce spacing */
+  }
+}
+
+
+
+/* === 1024px (Laptop) === */
+@media screen and (max-width: 1024px) {
+  .footer {
+    padding: 32px 32px;
+  }
+
+  .footer-links {
+    margin-left: 30px; /* Reduce margin for balance */
+    gap: 24px; /* Slightly tighter grid */
+  }
+}
+
+
+/* === 768px (Tablet) === */
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack left and links vertically */
+    padding: 24px 50px;
+    gap: 32px;
+  }
+
+  .footer-left {
+    padding-left: 0; /* Remove side padding */
+  }
+
+  .footer-links {
+    margin-left: 0;
+    width: 100%; /* Full width grid */
+    grid-template-columns: repeat(3, 1fr); /* 2 columns */
+    gap: 20px;
+  }
+
+  .get-app {
+    /* flex-direction: row; */
+    /* gap: 16px; */
+    flex-wrap: wrap;
+  }
+}
+
+/* === 375px (Mobile) === */
+@media screen and (max-width: 375px) {
+  .footer {
+    padding: 20px 50px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr; /* Stack all links vertically */
+    gap: 16px;
+  }
+
+  .app-button {
+    /* width: 100%; */
+  }
+
+  .get-app {
+    flex-direction: column; /* Stack buttons again on small mobile */
+    align-items: stretch;
+    gap: 1px;
+  }
 }

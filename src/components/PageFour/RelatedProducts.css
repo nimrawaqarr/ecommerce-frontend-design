@@ -1,0 +1,136 @@
+/* ===== Container Styling ===== */
+.saved-container {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 16px 16px 16px;
+  background: #fff;
+  max-width: 1200px;
+  margin: 25px auto;
+  font-family: 'Inter', sans-serif;
+}
+
+.saved-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+
+.saved-grid-four {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* changed */
+  gap: 30px; 
+}
+
+.saved-card-four {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.saved-img-four {
+  width: 100%;                          
+  max-width: 140px;         
+  height: 140px;
+  border-radius: 6px;
+}
+
+.img-div-four{
+   background-color: #EEEEEE;
+   padding: 20px 26px;
+   border-radius: 6px;
+   display: flex;           
+   justify-content: center;
+   align-items: center;
+}
+
+.saved-price-four {
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #505050;
+}
+
+.saved-desc-four {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  margin-right: 45px;
+  color: #8B96A5;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+
+
+
+/* ===== MEDIA QUERIES FOR RESPONSIVENESS ===== */
+
+/* ✅ BREAKPOINT: Tablets and small laptops */
+@media (max-width: 1024px) {
+  .saved-grid-four {
+    grid-template-columns: repeat(4, 1fr); /* reduced columns */
+  }
+  .img-div-four{
+   padding: 20px 30px;
+  }
+  .saved-desc-four {
+  margin-right: 50px;
+  }
+}
+
+
+
+/* ✅ BREAKPOINT: Tablets and landscape phones */
+@media (max-width: 768px) {
+  .saved-grid-four {
+    grid-template-columns: repeat(3, 1fr); /* reduced to 2 columns */
+  }
+
+  .saved-title {
+    font-size: 18px; /* slightly smaller title */
+  }
+
+  .saved-desc-four,
+  .saved-price-four {
+    font-size: 15px;
+  }
+
+  .img-div-four{
+   padding: 20px 30px;
+  }
+}
+
+
+/* ✅ BREAKPOINT: Mobile phones */
+@media (max-width: 480px) {
+  .saved-grid-four {
+    grid-template-columns: repeat(1, 1fr); /* one card per row */
+  }
+
+  .saved-container {
+    padding: 12px; /* more compact padding */
+  }
+
+  .saved-title {
+    font-size: 16px;
+  }
+
+  .saved-desc-four,
+  .saved-price-four {
+    font-size: 14px;
+  }
+
+  .saved-img-four {
+    max-width: 100px;     /* smaller images on small screens */
+    max-height: 100px;
+  }
+
+  .img-div-four {
+    padding: 16px;        /* smaller image wrapper padding */
+  }
+}
+
+
