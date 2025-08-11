@@ -39,19 +39,19 @@ const Navbar = () => {
       <div className="navbar-right">
         <Link to="/page-four" className="nav-icon">
           <i className="fas fa-user"></i>
-          <span>Profile</span>
+          <span className='txt-icon'>Profile</span>
         </Link>
         <div className="nav-icon">
           <i className="fas fa-comment-alt"></i>
-          <span>Message</span>
+          <span className='txt-icon'>Message</span>
         </div>
         <div className="nav-icon">
           <i className="fas fa-heart"></i>
-          <span>Orders</span>
+          <span className='txt-icon'>Orders</span>
         </div>
         <div className="nav-icon" onClick={handleClick}>
           <i className="fas fa-shopping-cart"></i>
-          <span>My cart</span>
+          <span className='txt-icon'>My cart</span>
         </div>
       </div>
     </nav>

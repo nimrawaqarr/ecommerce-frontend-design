@@ -299,8 +299,21 @@
 }
 
 .product-item-one:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
+
+/* .image-container-one {
+  overflow: hidden; 
+}
+
+.product-image-one {
+  transition: transform 0.3s ease;
+}
+
+.product-item-one:hover .product-image-one {
+  transform: scale(1.05);
+} */
+
 
 /* .image-container {
   flex-shrink: 0;

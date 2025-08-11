@@ -99,6 +99,26 @@
 }
 
 
+.subscribe-wrapper {
+  position: relative; /* Make this the anchor for absolute children */
+  display: inline-block;
+}
+
+.error-message {
+  position: absolute;
+  left: -200px;
+  top: 100%; /* Position just below the button */
+  margin-top: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.error-message {
+  color: red;
+}
+
+
+
 
 /* === 1440px (Large desktop) === */
 @media screen and (max-width: 1440px) {

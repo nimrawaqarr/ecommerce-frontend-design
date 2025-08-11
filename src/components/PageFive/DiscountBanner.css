@@ -11,6 +11,11 @@
   max-width: 1200px;
   margin: auto;
   margin-bottom: 90px;
+  transition: box-shadow 0.3s ease;
+}
+
+.discount-banner:hover {
+  box-shadow: 0 4px 12px rgba(35, 32, 209, 0.3);
 }
 
 .discount-banner::before {

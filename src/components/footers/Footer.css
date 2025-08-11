@@ -53,6 +53,10 @@
   text-decoration: none;
 }
 
+.social-icons i:hover {  
+  background-color: #717274;
+}
+
 .footer-links {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));

@@ -87,6 +87,20 @@
   margin-right: 14px;
 }
 
+.img-div {
+  overflow: hidden;
+}
+
+.saved-img {
+  transition: transform 0.2s ease;
+}
+
+.img-div:hover {
+  /* transform: scale(1.05); */
+  border: 1px solid rgb(228, 215, 215);
+}
+
+
 
 
 
@@ -160,7 +174,6 @@
     font-size: 18px;
     /* text-align: center; */
   }
-
   .saved-desc {
     font-size: 14px;
   }

@@ -125,7 +125,7 @@
 
 .recommendation-item img {
   width: 50px;
-  height: 50px;
+  /* height: 50px; */
   object-fit: contain;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -143,6 +143,20 @@
 .recommendation-item span {
   font-size: 16px;
   color: #777;
+}
+
+
+
+.recommendation-item {
+  overflow: hidden; /* Ensures zoom doesn't overflow */
+}
+
+.img-recom {
+  transition: transform 0.3s ease;
+}
+
+.recommendation-item:hover .img-recom {
+  border: 1px solid gray;
 }
 
 
@@ -215,7 +229,7 @@
 
   .recommendation-item img {
     width: 40px;
-    height: 40px;
+    /* height: 40px; */
     padding: 8px;
   }
 

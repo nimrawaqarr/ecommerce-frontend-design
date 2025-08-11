@@ -63,6 +63,19 @@
 }
 
 
+.img-div-four {
+  overflow: hidden;
+}
+
+.saved-img-four {
+  /* transition: transform 0.3s ease; */
+}
+
+.img-div-four:hover{
+  border: 1px solid rgb(228, 215, 215);
+}
+
+
 
 
 
@@ -102,6 +115,7 @@
    padding: 20px 30px;
   }
 }
+
 
 
 /* ✅ BREAKPOINT: Mobile phones */

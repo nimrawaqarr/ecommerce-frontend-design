@@ -3,7 +3,9 @@ import './CartPage.css';
 import { Link } from 'react-router-dom';
 
 const CartPage = ({ cartItems, setCartItems }) => {
+  const [couponInput, setCouponInput] = useState('');
   const [couponMessage, setCouponMessage] = useState('');
+  const [isCouponValid, setIsCouponValid] = useState(false);
   const [checkoutMessage, setCheckoutMessage] = useState('');
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
@@ -15,6 +17,24 @@ const CartPage = ({ cartItems, setCartItems }) => {
     const updatedItems = cartItems.filter(item => item.id !== id);
     setCartItems(updatedItems);
   };
+
+const handleApplyCoupon = () => {
+  const isNumeric = /^\d+$/.test(couponInput); // Only digits
+  const isValid = isNumeric && couponInput.length >= 6;
+
+  if (isValid) {
+    setIsCouponValid(true);
+    setCouponMessage('Coupon applied successfully!');
+  } else {
+    setIsCouponValid(false);
+    setCouponMessage('Please enter a valid coupon (at least 6 digits)');
+  }
+
+  setTimeout(() => {
+    setCouponMessage('');
+  }, 1500);
+};
+
 
   return (
     <div className="cart-container">
@@ -85,21 +105,21 @@ const CartPage = ({ cartItems, setCartItems }) => {
           <div className="coupon">
             <p>Have a coupon?</p>
             <div className="coupon-input">
-              <input type="text" placeholder="Add coupon" />
-              <button
-                className="coupon-btn"
-                onClick={() => {
-                  setCouponMessage('Coupon applied successfully!');
-                  setTimeout(() => {
-                    setCouponMessage('');
-                  }, 1000);
-                }}
-              >
+              <input
+                type="text"
+                placeholder="Add coupon"
+                value={couponInput}
+                onChange={(e) => setCouponInput(e.target.value)}
+              />
+
+              <button className="coupon-btn" onClick={handleApplyCoupon}>
                 Apply
               </button>
             </div>
             {couponMessage && (
-              <p className="coupon-success">{couponMessage}</p>
+              <p className={isCouponValid ? "coupon-success" : "coupon-error"}>
+                {couponMessage}
+              </p>
             )}
           </div>
 

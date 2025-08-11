@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,7 +9,9 @@ const Footer = () => {
       <div className="footer-left">
         
         <div className="brand">
+          <Link to="/">
           <img src="/images/pageone/logo.jpg" alt="Logo" className="brand-icon" />
+          </Link>
         </div>
 
         <p className="brand-text">

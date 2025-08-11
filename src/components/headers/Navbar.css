@@ -109,6 +109,14 @@
   color: #8B96A5;
 }
 
+.nav-icon i:hover {
+  color: #53565a;
+}
+
+.txt-icon:hover{
+  color: #53565a;
+}
+
 .search-input-wrapper {
   /* position: relative; */
   width: 100%;

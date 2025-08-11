@@ -288,6 +288,10 @@
   color: green;
 }
 
+.checkout-btn:hover {
+  background-color: rgb(12, 168, 12);
+}
+
 .checkout-btn {
   width: 100%;
   padding: 18px 10px;
@@ -332,6 +336,13 @@
   font-size: 12px !important;
   margin-top: 6px !important;
 }
+
+.coupon-error {
+  color: red !important;
+  font-size: 12px !important;
+  margin-top: 6px !important;
+}
+
 
 
 
@@ -401,6 +412,10 @@
     width: 40px;
     height: 40px;
     padding: 5px;
+  }
+
+  .coupon-error {
+    font-size: 10px !important;
   }
 
   .item-info h4 {

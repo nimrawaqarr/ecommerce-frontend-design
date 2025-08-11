@@ -31,12 +31,25 @@
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   background-color: #fff;
   text-align: left;
-    transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .recommended-card:hover{
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
+
+.recommended-card {
+  overflow: hidden; /* prevents zoomed image from spilling out */
+}
+
+.recommended-img {
+  transition: transform 0.3s ease;
+}
+
+.recommended-card:hover .recommended-img {
+  transform: scale(1.05);
+}
+
 
 .recommended-img {
   width: 100%;
